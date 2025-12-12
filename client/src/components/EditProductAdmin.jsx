@@ -114,6 +114,7 @@ const EditProductAdmin = ({close,data : propsData, fetchProductData}) => {
             subCategory : [],
             unit : "",
             stock : "",
+            status : true,
             price : "",
             description : ""
           })
