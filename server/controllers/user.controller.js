@@ -182,7 +182,7 @@ export async function loginController(request, response){
 export async function logoutController(request,response) {
     try {
 
-        const userid = request.userid //middleware
+        const userid = request.userId //middleware
         const cookiesOption = {
             httpOnly : true,
             secure : true,
