@@ -7,11 +7,6 @@ const orderRouter = Router()
 
 orderRouter.post("/cash-on-delivery",auth,CashOnDeliveryOrderController)
 orderRouter.post('/checkout',auth,paymentController)
-orderRouter.post(
-  "/webhook",
-  express.raw({ type: "application/json" }),
-  webhookStripe
-);
 orderRouter.get("/order-list",auth,getOrderDetailsController)
 orderRouter.put("/status",auth,admin,updateOrderStatusController);
 
