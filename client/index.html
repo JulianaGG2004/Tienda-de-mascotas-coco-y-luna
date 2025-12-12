@@ -6,14 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mascotas C&L</title>
     <script>
-  (function(m,a,z,e){
-    var s = a.createElement("script");
-    s.src = z + "?apiKey=" + e;
-    s.async = true;
-    a.getElementsByTagName("head")[0].appendChild(s);
-    m.mazeUniversalSnippetApiKey = e;
-  })(window, document, "https://snippet.maze.co/maze-universal-loader.js", "c9d53d0a-91a3-422f-8a08-0bd56e20e517");
-</script>
+    (function (m, a, z, e) {
+      var s, t, u, v;
+      try {
+        t = m.sessionStorage.getItem('maze-us');
+      } catch (err) {}
+
+      if (!t) {
+        t = new Date().getTime();
+        try {
+          m.sessionStorage.setItem('maze-us', t);
+        } catch (err) {}
+      }
+
+      u = document.currentScript || (function () {
+        var w = document.getElementsByTagName('script');
+        return w[w.length - 1];
+      })();
+      v = u && u.nonce;
+
+      s = a.createElement('script');
+      s.src = z + '?apiKey=' + e;
+      s.async = true;
+      if (v) s.setAttribute('nonce', v);
+      a.getElementsByTagName('head')[0].appendChild(s);
+      m.mazeUniversalSnippetApiKey = e;
+    })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', 'c9d53d0a-91a3-422f-8a08-0bd56e20e517');
+    </script>
+
   </head>
   
   <body>
