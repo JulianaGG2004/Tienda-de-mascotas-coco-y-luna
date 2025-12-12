@@ -22,6 +22,10 @@ app.use(cors({
   origin: process.env.FRONTEND_URL
 }))
 
+app.post('/api/order/webhook',
+  express.raw({ type: 'application/json' })
+)
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan())
