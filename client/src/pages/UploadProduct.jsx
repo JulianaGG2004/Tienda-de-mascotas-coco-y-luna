@@ -18,8 +18,8 @@ const UploadProduct = () => {
     category : [],
     subCategory : [],
     unit : "",
-    stock : true,
-    status : "",
+    stock : "",
+    status : true,
     price : "",
     description : ""
   })
