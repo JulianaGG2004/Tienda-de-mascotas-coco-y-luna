@@ -21,11 +21,6 @@ app.use(cors({
   credentials: true,
   origin: process.env.FRONTEND_URL
 }))
-
-app.post('/api/order/webhook',
-  express.raw({ type: 'application/json' })
-)
-
 app.use(express.json())
 app.use(cookieParser())
 app.use(morgan())
@@ -40,7 +35,7 @@ app.get("/", (req, res) => {
     message: "Servidor está corriendo " + PORT
   })
 })
-
+app.use("/api/order", orderRouter)
 app.use('/api/user', userRouter)
 app.use('/api/category', categoryRouter)
 app.use("/api/file", uploadRouter)
@@ -48,7 +43,7 @@ app.use("/api/subcategory", subCategoryRouter)
 app.use("/api/product", productRouter)
 app.use("/api/cart", cartRouter)
 app.use("/api/address", addressRouter)
-app.use("/api/order", orderRouter)
+
 
 if (process.env.NODE_ENV !== 'test') {
   connectDB().then(() => {
