@@ -1,10 +1,16 @@
 {
-  "version": 2,
-  "name": "tienda-backend",
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ]
-}
+    "version" : 2,
+    "name" : "Tienda de Mascotas Coco y Luna",
+    "builds" : [
+        {
+            "src" : "./index.js",
+            "use" : "@vercel/node"
+        }
+    ],
+    "routes" : [
+        {
+            "src" : "/(.*)",
+            "dest" : "/"
+        }
+    ]
+}     
