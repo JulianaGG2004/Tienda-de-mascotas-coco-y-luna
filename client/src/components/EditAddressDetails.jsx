@@ -108,7 +108,7 @@ const EditAddressDetails = ({close, data}) => {
                     />
                 </div>
                 <div className='grid gap-1'>
-                    <label htmlFor='mobile'>Telefono de contato:</label>
+                    <label htmlFor='mobile'>Telefono de contacto:</label>
                     <input
                         type='text'
                         id='mobile' 
